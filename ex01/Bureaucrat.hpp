@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 02:35:03 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 17:24:51 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 17:36:09 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BUREAUCRAT_H_
 
 #include <string>
+
+class Form;
 
 class Bureaucrat {
  public:
@@ -25,6 +27,8 @@ class Bureaucrat {
 
   void promote(void);
   void demote(void);
+
+  void signForm(Form &form) const;
 
  private:
   Bureaucrat(void);

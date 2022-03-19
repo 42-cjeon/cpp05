@@ -6,11 +6,12 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:01:10 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 17:24:08 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 17:36:38 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 #include "GradeException.hpp"
 

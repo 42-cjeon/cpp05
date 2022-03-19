@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 03:43:07 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 17:03:43 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 17:35:18 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,6 @@ void ctor_test(void)
   try_create_form("TEST", 151, 151);
 }
 
-void try_sign(Bureaucrat &b, Form &f)
-{
-  try {
-    f.beSigned(b);
-    std::cout << f << std::endl;
-  } catch (GradeExcption &e) {
-    std::cerr << e.what() << " (" << e.grade() << ")" << std::endl;
-  }
-}
-
 void sign_test(void)
 {
   std::cout << "--- test sign ---" << std::endl;
@@ -56,9 +46,9 @@ void sign_test(void)
   Form eq("EQUAL", 42, 1);
   Form high("HIGH", 1, 1);
 
-  try_sign(bob, low);
-  try_sign(bob, eq);
-  try_sign(bob, high);
+  bob.signForm(low);
+  bob.signForm(eq);
+  bob.signForm(high);
 }
 
 int main(void) {

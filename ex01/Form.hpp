@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:01:45 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 17:24:20 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 17:29:27 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 #include <iostream>
 #include <string>
 
-#include "Bureaucrat.hpp"
 #include "GradeException.hpp"
+
+class Bureaucrat;
 
 class Form {
  public:

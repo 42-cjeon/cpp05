@@ -6,11 +6,12 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 03:09:15 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 17:24:58 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 17:36:58 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include "GradeException.hpp"
 
 #include <iostream>
@@ -44,6 +45,21 @@ void Bureaucrat::demote(void) {
     throw GradeTooLowException(grade_ + 1);
   }
   ++grade_;
+}
+
+
+void Bureaucrat::signForm(Form &form) const
+{
+  try {
+    form.beSigned(*this);
+    std::cout << name_ << " signs " << form.name() << std::endl;
+  } catch (GradeTooLowException &e) {
+    std::cout << name_ << " cannot sign " << form.name() 
+              << " because " << e.what()
+              << " (requested: " << e.grade()
+              << " but required: " << form.required_sign_grade()
+              << ")" << std::endl;
+  }
 }
 
 std::ostream &operator<<(std::ostream &lhs, const Bureaucrat &rhs) {
