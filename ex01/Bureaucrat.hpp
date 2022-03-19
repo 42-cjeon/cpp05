@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 02:35:03 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 15:25:43 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 17:24:51 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 class Bureaucrat {
  public:
   Bureaucrat(const std::string &name, int grade);
-  Bureaucrat(const Bureaucrat &origin);
-  Bureaucrat &operator=(const Bureaucrat &rhs);
   ~Bureaucrat(void);
 
   const std::string &getName(void) const;
@@ -30,6 +28,8 @@ class Bureaucrat {
 
  private:
   Bureaucrat(void);
+  Bureaucrat(const Bureaucrat &origin);
+  Bureaucrat &operator=(const Bureaucrat &rhs);
   const std::string name_;
   int grade_;
 };

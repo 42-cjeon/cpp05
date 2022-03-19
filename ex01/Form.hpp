@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:01:45 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 15:49:52 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 17:24:20 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class Form {
  public:
   Form(const std::string &name, int required_sign_grade,
        int required_execute_grade);
-  Form(const Form &origin);
-  Form &operator=(const Form &rhs);
   ~Form(void);
 
   void beSigned(const Bureaucrat &bureaucrat);
@@ -36,6 +34,8 @@ class Form {
 
  private:
   Form(void);
+  Form(const Form &origin);
+  Form &operator=(const Form &rhs);
   void checkGradeOrThrow(void);
   bool is_signed_;
   const std::string name_;

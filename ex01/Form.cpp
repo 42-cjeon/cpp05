@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:01:10 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 16:50:42 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 17:24:08 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,6 @@ Form::Form(const std::string &name, int required_sign_grade,
       required_sign_grade_(required_sign_grade),
       required_execute_grade_(required_execute_grade) {
   checkGradeOrThrow();
-}
-
-Form::Form(const Form &origin)
-    : is_signed_(origin.is_signed_),
-      name_(origin.name_),
-      required_sign_grade_(origin.required_sign_grade_),
-      required_execute_grade_(origin.required_execute_grade_) {}
-
-Form &Form::operator=(const Form &rhs) {
-  is_signed_ = rhs.is_signed_;
-  const_cast<std::string &>(name_) = rhs.name_;
-  const_cast<int &>(required_sign_grade_) = rhs.required_sign_grade_;
-  const_cast<int &>(required_execute_grade_) = rhs.required_execute_grade_;
-  return *this;
 }
 
 Form::~Form(void) {}
