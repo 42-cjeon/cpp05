@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:01:10 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 15:55:30 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/19 16:50:42 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void Form::checkGradeOrThrow(void) {
   } else if (required_execute_grade_ < kHighestGrade) {
     throw GradeTooHighException(required_execute_grade_);
   } else if (required_sign_grade_ > kLowestGrade) {
-    throw GradeTooHighException(required_sign_grade_);
+    throw GradeTooLowException(required_sign_grade_);
   } else if (required_execute_grade_ > kLowestGrade) {
-    throw GradeTooHighException(required_execute_grade_);
+    throw GradeTooLowException(required_execute_grade_);
   }
 }
 
