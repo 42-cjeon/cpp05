@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 03:09:15 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 17:36:58 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 02:11:54 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "GradeException.hpp"
 
 #include <iostream>
-
-Bureaucrat::Bureaucrat(void) {}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name_(name) {
   if (grade < kHighestGrade) {
