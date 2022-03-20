@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 03:43:07 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 14:50:01 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 02:08:02 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@ int main(void) {
   std::cout << "--- Constructor test ---" << std::endl;
   try {
     for (int i = 1; i < 200; ++i) {
-      std::cout << Bureaucrat("TEST", i) << std::endl;
+      Bureaucrat test("TEST", i);
+      std::cout << test  << std::endl;
     }
   } catch (const GradeExcption &e) {
     std::cerr << e.what() << " (" << e.grade() << ")" << std::endl;
   }
   try {
     for (int i = 150; i >= 0; --i) {
-      std::cout << Bureaucrat("TEST", i) << std::endl;
+      Bureaucrat test("TEST", i);
+      std::cout << test << std::endl;
     }
   } catch (const GradeExcption &e) {
     std::cerr << e.what() << " (" << e.grade() << ")" << std::endl;
