@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 19:54:00 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 20:33:20 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 02:23:08 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ Intern::~Intern(void) {}
 
 Form *Intern::makeForm(const std::string &form_name,
                        const std::string &target) {
-  const char *form_keys[kNumberOfFormKind] = {"robotomy request", "presidential pardon",
-                             "shrubbery creation"};
+  const char *form_keys[kNumberOfFormKind] = {
+      "robotomy request", "presidential pardon", "shrubbery creation"};
   Form *(Intern::*forms[kNumberOfFormKind])(const std::string &target) = {
       &Intern::makeRobotomyRequestForm, &Intern::makePresidentialPardonForm,
       &Intern::makeShrubberyCreationForm};
@@ -35,7 +35,8 @@ Form *Intern::makeForm(const std::string &form_name,
       return (this->*forms[i])(target);
     }
   }
-  std::cout << "Intern cannot found form template for <" << form_name << ">" << std::endl;
+  std::cout << "Intern cannot found form template for <" << form_name << ">"
+            << std::endl;
   return NULL;
 }
 
